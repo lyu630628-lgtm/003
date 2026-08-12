@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>메디아렌즈 식염수 500ml 상세페이지 기획 초안</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #eef6fb;
+    color: #18334a;
+    font-family: Arial, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    line-height: 1.65;
+  }
+  .page {
+    width: min(100%, 760px);
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 0 40px rgba(31,78,121,.08);
+  }
+  section { padding: 72px 38px; border-bottom: 1px solid #e6eef4; }
+  .hero {
+    min-height: 720px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(180deg, #e9f7ff 0%, #ffffff 100%);
+  }
+  .eyebrow {
+    letter-spacing: .14em;
+    font-size: 13px;
+    font-weight: 800;
+    color: #337eab;
+    margin-bottom: 12px;
+  }
+  h1, h2, h3, p { margin-top: 0; }
+  h1 { font-size: 42px; line-height: 1.25; margin-bottom: 20px; }
+  h2 { font-size: 34px; line-height: 1.3; margin-bottom: 16px; }
+  h3 { font-size: 20px; line-height: 1.4; margin-bottom: 8px; }
+  .lead { font-size: 19px; color: #47677f; }
+  .small { font-size: 13px; color: #7890a3; }
+  .placeholder {
+    margin: 30px 0 0;
+    border: 2px dashed #a9c8db;
+    background: #f4faff;
+    color: #5f8299;
+    min-height: 260px;
+    padding: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 700;
+  }
+  .placeholder.tall { min-height: 380px; }
+  .placeholder.short { min-height: 180px; }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 32px 0;
+  }
+  .stat {
+    background: #f3f9fd;
+    border: 1px solid #d9eaf4;
+    padding: 26px 12px;
+    text-align: center;
+    border-radius: 14px;
+  }
+  .stat b {
+    display: block;
+    font-size: 31px;
+    color: #176b9f;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .card {
+    border: 1px solid #e0ebf2;
+    border-radius: 16px;
+    padding: 22px;
+    background: #fff;
+  }
+  .pain .card { background: #fff7f5; border-color: #f2d8d2; }
+  .solution {
+    background: linear-gradient(180deg,#f2fbff 0%,#fff 100%);
+  }
+  .solution .card { background: #ffffff; }
+  .check { color: #16719f; font-weight: 800; margin-right: 5px; }
+  .recommend {
+    background: #123e60;
+    color: #fff;
+  }
+  .recommend .lead, .recommend .small { color: #d7e7f2; }
+  .recommend .card { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.16); }
+  .ingredient-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 26px 0;
+  }
+  .ingredient {
+    border-radius: 999px;
+    padding: 10px 15px;
+    background: #eff7fb;
+    border: 1px solid #d7e7f0;
+    font-weight: 700;
+  }
+  .steps { margin-top: 30px; }
+  .step {
+    display: grid;
+    grid-template-columns: 58px 1fr;
+    gap: 16px;
+    align-items: start;
+    padding: 20px 0;
+    border-top: 1px solid #e6eef4;
+  }
+  .step:last-child { border-bottom: 1px solid #e6eef4; }
+  .num {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #16719f;
+    color: #fff;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .warning {
+    background: #fff9e8;
+    border: 1px solid #f0d98c;
+    border-radius: 16px;
+    padding: 22px;
+    margin-top: 18px;
+  }
+  .danger {
+    background: #fff1f1;
+    border: 1px solid #efc4c4;
+    border-radius: 16px;
+    padding: 22px;
+    margin-top: 18px;
+  }
+  table { width: 100%; border-collapse: collapse; margin-top: 26px; }
+  th, td { padding: 16px 14px; border-bottom: 1px solid #e4edf3; vertical-align: top; text-align: left; }
+  th { width: 28%; color: #416177; background: #f5f9fc; }
+  .cta {
+    margin-top: 34px;
+    padding: 28px;
+    border-radius: 18px;
+    background: #16719f;
+    color: #fff;
+    text-align: center;
+  }
+  .cta b { font-size: 25px; display: block; margin-bottom: 6px; }
+  .internal {
+    margin-top: 18px;
+    background: #edf1f4;
+    color: #61717d;
+    border-left: 4px solid #8d9da9;
+    padding: 14px 16px;
+    font-size: 13px;
+  }
+  .quote {
+    margin-top: 20px;
+    padding: 20px 22px;
+    border-left: 4px solid #5aa6cf;
+    background: #f5fbff;
+    color: #365c74;
+  }
+  @media (max-width: 620px) {
+    section { padding: 54px 22px; }
+    h1 { font-size: 34px; }
+    h2 { font-size: 28px; }
+    .stats { grid-template-columns: 1fr; }
+    .cards { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 1. 히어로 -->
+  <section class="hero">
+    <div class="eyebrow">MEDIA LENS WASH · 500ml</div>
+    <h1>렌즈 관리의 마지막 한 단계,<br>착용 전 충분히 헹구는 습관</h1>
+    <p class="lead">렌즈 세척 또는 소독 후 헹굼에 사용하는<br><b>렌즈 전용 식염수</b></p>
+    <div class="placeholder tall">[히어로 이미지]<br><br>메디아렌즈 식염수 500ml 제품 단독컷<br>+ 맑은 물결/투명감 연출<br>+ 실제 렌즈를 헹구는 손 사용 장면</div>
+    <p class="small">※ 본 제품은 코세척용이 아닙니다.</p>
+  </section>
+
+  <!-- 2. 리뷰/자기자랑 -->
+  <section>
+    <div class="eyebrow">REAL REVIEW DATA</div>
+    <h2>매일 쓰는 제품일수록<br>다시 찾게 되는 이유가 중요합니다</h2>
+    <p class="lead">업로드된 우리 제품 리뷰 1,500건을 기준으로 확인한 구매 만족도입니다.</p>
+    <div class="stats">
+      <div class="stat"><b>1,500건</b>분석 리뷰 수</div>
+      <div class="stat"><b>4.82 / 5</b>평균 평점</div>
+      <div class="stat"><b>1,340건</b>5점 리뷰</div>
+    </div>
+    <div class="quote">
+      리뷰에서는 <b>아이 드림렌즈 관리, 하드렌즈 헹굼, 넉넉한 500ml 용량, 반복 구매</b> 같은 실제 사용 맥락이 반복적으로 확인됩니다.
+    </div>
+    <div class="placeholder short">[리뷰 카드 3~4개]<br>드림렌즈 매일 사용 / 하드렌즈 장기 사용자 / 500ml 넉넉함 / 재구매<br><br>※ 실제 리뷰 원문 사용 시 플랫폼·광고 가이드에 맞춰 검수</div>
+    <div class="internal">기획 검수: 4.82점·1,500건·5점 1,340건은 업로드된 리뷰 데이터 기준. 현재 판매페이지의 실시간 평점처럼 오인되지 않도록 ‘리뷰 데이터 기준’ 표기 권장.</div>
+  </section>
+
+  <!-- 3. 불편사항 -->
+  <section class="pain">
+    <div class="eyebrow">BEFORE</div>
+    <h2>렌즈는 매일 관리하는데,<br>헹굼 단계에서 이런 불편은 없었나요?</h2>
+    <div class="cards">
+      <div class="card"><h3>매일 쓰다 보니 금방 줄어드는 식염수</h3><p>드림렌즈처럼 매일 관리하면 헹굼용 식염수도 꾸준히 소비됩니다.</p></div>
+      <div class="card"><h3>세척액·보존액·식염수, 헷갈리는 역할</h3><p>여러 관리용품을 함께 쓰다 보면 어느 단계에 무엇을 써야 하는지 복잡하게 느껴질 수 있습니다.</p></div>
+      <div class="card"><h3>크리너로 닦은 뒤 꼭 필요한 헹굼</h3><p>세척 후 남은 용액을 헹구는 과정까지 매번 챙겨야 합니다.</p></div>
+      <div class="card"><h3>아이 렌즈까지 관리하면 더 커지는 사용량</h3><p>보호자가 매일 드림렌즈를 관리하는 가정에서는 소모량 자체가 구매 기준이 됩니다.</p></div>
+    </div>
+    <div class="placeholder">[공감 생활컷]<br>아침에 드림렌즈를 관리하는 보호자 / 렌즈 케이스 / 여러 렌즈 관리용품이 놓인 세면대<br><br>‘또 식염수 떨어졌네’라는 상황을 시각화</div>
+    <div class="internal">표현 주의: ‘식염수를 쓰지 않으면 눈이 상한다’ 등 건강상 위해를 단정하지 말고, 실제 리뷰에서 확인된 ‘소모·관리·헹굼의 번거로움’ 중심으로 공감.</div>
+  </section>
+
+  <!-- 4. 해결 -->
+  <section class="solution">
+    <div class="eyebrow">AFTER · SOLUTION</div>
+    <h2>매일 반복하는 헹굼,<br>500ml로 넉넉하게 준비하세요</h2>
+    <p class="lead">메디아렌즈 식염수는 콘택트렌즈의 헹굼, 열소독 및 화학소독 후의 헹굼에 사용하는 제품입니다.</p>
+    <div class="cards">
+      <div class="card"><h3><span class="check">✓</span> 렌즈 크리너 사용 후</h3><p>세척한 렌즈를 본제로 헹구는 단계에 사용합니다.</p></div>
+      <div class="card"><h3><span class="check">✓</span> 소독 후 헹굼</h3><p>열소독·화학소독 후 남은 소독액을 본제로 완전히 헹굽니다.</p></div>
+      <div class="card"><h3><span class="check">✓</span> 500ml 단일 용량</h3><p>렌즈를 자주 관리해 식염수 사용량이 많은 일상에 집중한 판매 용량입니다.</p></div>
+      <div class="card"><h3><span class="check">✓</span> 다양한 렌즈 사용 안내</h3><p>현재 상세페이지에는 소프트·하드·드림·서클·일회용·컬러렌즈 등에 사용할 수 있다고 안내되어 있습니다.</p></div>
+    </div>
+    <div class="placeholder">[3 STEP GIF/연속 이미지]<br>① 렌즈 크리너로 세척 → ② 메디아렌즈 식염수로 충분히 헹굼 → ③ 렌즈별 관리지침에 따라 다음 단계 진행</div>
+  </section>
+
+  <!-- 5. 추천 대상 -->
+  <section class="recommend">
+    <div class="eyebrow">FOR YOU</div>
+    <h2>이런 렌즈 사용자에게<br>추천합니다</h2>
+    <div class="cards">
+      <div class="card"><h3>아이 드림렌즈를 매일 관리하는 가정</h3><p>아침·저녁 렌즈 관리가 반복되어 헹굼용 식염수 사용량이 많은 경우</p></div>
+      <div class="card"><h3>하드/RGP 렌즈를 꾸준히 사용하는 분</h3><p>렌즈 크리너 세척 후 식염수로 헹구는 루틴이 있는 경우</p></div>
+      <div class="card"><h3>식염수를 자주 사용하는 렌즈 사용자</h3><p>소용량보다 집에서 넉넉하게 사용할 500ml를 찾는 경우</p></div>
+      <div class="card"><h3>관리용액의 역할을 구분해서 쓰는 분</h3><p>세정·소독·보존과 헹굼 단계를 나눠 관리하는 경우</p></div>
+    </div>
+    <div class="placeholder short" style="border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.06);color:#d9edf8;">[추천 대상 4분할 생활컷]<br>드림렌즈 보호자 / 하드렌즈 사용자 / 500ml 세면대 비치 / 실제 헹굼 장면</div>
+  </section>
+
+  <!-- 6. 전성분 -->
+  <section>
+    <div class="eyebrow">INGREDIENTS</div>
+    <h2>제품에 표시된 성분을<br>확인하세요</h2>
+    <p class="lead">현재 제공된 상세페이지의 상품 상세정보에 기재된 성분입니다.</p>
+    <div class="ingredient-list">
+      <span class="ingredient">염화나트륨</span>
+      <span class="ingredient">붕산</span>
+      <span class="ingredient">붕사</span>
+      <span class="ingredient">에데트산나트륨수화물</span>
+      <span class="ingredient">소르빈산칼륨</span>
+      <span class="ingredient">정제수</span>
+    </div>
+    <div class="placeholder short">[라벨 확대컷]<br>실제 500ml 제품 라벨의 성분 표기 부분을 선명하게 촬영</div>
+    <div class="internal">표기 검수: 사용자 요청상 섹션명은 ‘전성분’으로 구성했으나, 실제 제품 라벨/허가사항의 공식 항목명이 ‘성분’인지 확인 후 최종 디자인 문구를 맞추는 것을 권장.</div>
+  </section>
+
+  <!-- 7. 사용방법 -->
+  <section>
+    <div class="eyebrow">HOW TO USE</div>
+    <h2>렌즈 관리 단계에 맞춰<br>이렇게 사용하세요</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <div><h3>렌즈 크리너로 세척</h3><p>렌즈 착용 전 또는 소독 전에 렌즈 크리너로 렌즈를 세척합니다.</p></div>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <div><h3>메디아렌즈 식염수로 헹굼</h3><p>세척한 렌즈를 본제로 충분히 헹굽니다.</p></div>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <div><h3>소독 후에도 다시 헹굼</h3><p>열소독 또는 화학소독 후에는 본제로 소독액을 완전히 헹굽니다.</p></div>
+      </div>
+    </div>
+    <div class="placeholder">[사용방법 GIF]<br>실제 손 + 렌즈 + 500ml 제품을 사용해<br>세척 → 헹굼 → 관리 완료 흐름을 한눈에 보여주기</div>
+  </section>
+
+  <!-- 8. 주의사항 -->
+  <section>
+    <div class="eyebrow">CAUTION</div>
+    <h2>사용 전 꼭 확인해주세요</h2>
+    <div class="danger">
+      <h3>코세척용 제품이 아닙니다.</h3>
+      <p>현재 상세페이지에서 명확히 고지하고 있는 주의사항입니다. 렌즈용 식염수의 용도와 다른 목적으로 사용하지 않도록 상단과 주의사항 영역에 반복 고지하는 것을 권장합니다.</p>
+    </div>
+    <div class="warning">
+      <h3>최종 제작 전 추가 확인이 필요한 내용</h3>
+      <p>현재 제공된 상세페이지 이미지에서는 실제 제품 라벨의 전체 ‘사용상의 주의사항’ 원문을 확인할 수 없습니다. <b>개봉 후 권장 사용기간, 용기 취급, 이상 발생 시 조치 등은 실제 500ml 라벨 또는 공식 허가자료를 받은 뒤 원문 기준으로 추가</b>해야 합니다.</p>
+    </div>
+    <div class="placeholder short">[주의사항/라벨 확대 이미지]<br>500ml 제품 뒷면의 ‘사용상의 주의사항’ 전체가 읽히도록 정면 촬영</div>
+  </section>
+
+  <!-- 9. 제품정보 -->
+  <section>
+    <div class="eyebrow">PRODUCT INFORMATION</div>
+    <h2>메디아렌즈 식염수 500ml<br>제품정보</h2>
+    <table>
+      <tr><th>제품명</th><td>메디아렌즈워시액(식염수)</td></tr>
+      <tr><th>성상</th><td>무색의 투명한 용액</td></tr>
+      <tr><th>효능·효과</th><td>콘택트렌즈의 헹굼, 열소독 및 화학소독 후의 헹굼</td></tr>
+      <tr><th>판매 용량</th><td>500ml</td></tr>
+      <tr><th>저장방법</th><td>기밀용기, 실온보관(1~30℃)</td></tr>
+      <tr><th>사용기한</th><td>제조일로부터 3년</td></tr>
+      <tr><th>제조자</th><td>(주)보라미</td></tr>
+    </table>
+    <div class="placeholder short">[제품 정보컷]<br>500ml 앞/뒤 패키지 + 라벨 확대 + 제조번호/사용기한 위치 안내</div>
+    <div class="cta">
+      <b>매일 반복하는 렌즈 관리,<br>헹굼까지 빠뜨리지 마세요.</b>
+      메디아렌즈 식염수 500ml
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
